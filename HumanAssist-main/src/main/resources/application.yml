@@ -3,13 +3,13 @@ app:
     driver-class-name: org.postgresql.Driver
     jdbc-url: jdbc:postgresql://localhost:5432/humanassist #flyway does not have support for r2dbc
     username: postgres
-    password: 'Radhem@2023'
+    password: 
     pool-size: 30
 spring:
   r2dbc:
     url: r2dbc:postgresql://localhost:5432/humanassist
     username: postgres
-    password: 'Radhem@2023'
+    password: 
   flyway:
     validateMigrationNaming: true
     locations: filesystem:/Volumes/Personal/Repo/HumanAssistSQLScript #classpath:db/migration
