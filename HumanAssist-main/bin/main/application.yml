@@ -1,0 +1,25 @@
+app:
+  flyway-datasource:
+    driver-class-name: org.postgresql.Driver
+    jdbc-url: jdbc:postgresql://localhost:5432/humanassist #flyway does not have support for r2dbc
+    username: postgres
+    password: 'Radhem@2023'
+    pool-size: 30
+spring:
+  r2dbc:
+    url: r2dbc:postgresql://localhost:5432/humanassist
+    username: postgres
+    password: 'Radhem@2023'
+  flyway:
+    validateMigrationNaming: true
+    locations: filesystem:/Volumes/Personal/Repo/HumanAssistSQLScript #classpath:db/migration
+  redis:
+    host: localhost
+    port: 6379
+    database: 0
+server:
+  port: 8081
+
+humanassist:
+  registration-service:
+    endpoint: 'http://localhost:8080/validate'
